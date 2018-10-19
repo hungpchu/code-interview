@@ -1,4 +1,4 @@
-string = "BCABA"
+string = "ABBA"
 
 
 dict = {}

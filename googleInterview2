@@ -1,0 +1,68 @@
+Given N ratios of various entities, find the ratios for M queries of pairs of entities:
+
+Example:
+file 1: N items (N=5 for instance):
+
+USD,GBP,0.69
+Meter,Yard,1.09
+YEN,EUR,0.0077
+YEN,GBP,0.0059
+Horsepower,Watt, 745.7
+
+Means:
+USD / GBP = 0.69
+Meter / Yard = 1.09
+…
+
+file 2: M items:
+
+USD,YEN
+EUR,GBP
+Meter,EUR
+Horsepower,Horsepower
+Liter,Gallon
+
+Output:
+115.7475
+(1 / 0.0077) * (1 / 167.75)
+-1
+1
+-1
+
+Means:
+0.69 * 167.75
+
+
+entities = [(‘YEN’, ‘USD’, 1.5), ...]
+entity1 = ‘EUR’
+entity2 = ‘GBP’
+euro -> (0.007) Yen-> (0.0059)GBP
+from
+adjacency list
+{yen:[(GDB,..
+
+
+
+
+
+def DFS(matrix, entity1,entity2, path = []):
+      path 
+     if entity2 is visited:
+             visited = true
+	for nearbyNode in matrix:
+		if entity2 in matrix:
+                 path  += hashmap[e1][nearbyNode]
+			path = DFS(matrix, entity1, nearbyNode, path)
+     		
+ return path          
+
+hashMap = { e1:{e2:0.75},e2 :
+def query(entities, entity1, entity2):
+	hashmap = {}
+      for e1, e2, value in entities:
+		if e1 not in hashmap:
+      	          hashmap[e1] = {}
+            hashmap[e1][e2] = value
+	path = 0
+      return DFS(matrix, entity1, entity2,path)
+

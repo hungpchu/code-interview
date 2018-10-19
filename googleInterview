@@ -1,0 +1,105 @@
+Please use this Google doc to code during your interview. To free your hands for coding, we recommend that you use a headset or a phone with speaker option.
+
+Write a lossless CSS color minifier.  Given a string, determine if it is 6 digit hex, 3 digit hex, or rgb() format and convert to smallest possible form (6 digit hex or 3 digit hex if possible)
+
+Implement:
+String minifyColor(String maybeColor):
+
+def checkRGB(String):
+	array = list(string)
+      result = string.split(“(,)”)
+      count = 3
+	 for i in range(len(result):
+		if ( result[0] == “rgb” or result[0] != “RGB”):
+return string
+elseif(i > 0):
+     if (int(result[i]) < 0 or int(result[i]) > 255):
+          return string
+     else:
+	
+substring += element
+ 
+
+def minifyColor(string):
+	array = list(string)
+	substring = “”
+      check  = []
+	str = string.strip(“# -/+-”)
+	if (len(str) <= 0 or len(str) > 6):
+		return string
+      if (len(str) == 3)
+		return string
+	for element in array:
+		count += 1
+           if ( count == 2):
+		     check.append(substring)
+                count = 0
+                substring = “”
+		substring += element
+            					result = “#”
+	for e in check:
+		for i in range(len(e)):
+			if (e[0] == e[1] or e[0].tpUpppercase == e[1] or e[1].toUppercase == e[0]):
+				result += e[0]
+       		else:
+				return string
+		
+	return result
+	
+
+Where maybe color is the underlined section:
+check = [“ff”,”00”,”33”]
+ color:  ff0033 ;
+ff0033
+  result = #f03
+“    #ff0033 “
+“ #f03 “
+“ rgb(123, 43, 1) “
+
+input: “ #ff0033 “
+out: “#f03”
+
+input: “ #f09999 “
+output: “#f09999”
+
+input: “ #449999 “
+out: “#499”
+
+
+  " #AbCdE" -> "#AbCdE" 
+
+Requirements:
+
+  * make the result smaller (never bigger) 
+  * do not modify the webpage's style (e.g. change the effect of a rule) 
+
+  1) always trim. 
+  2) invalid #hex or rgb() -> return trimmed. 
+  3) valid #hex or rgb() -> lowercase. 
+  4) #112233 -> #123. 
+  5) rgb(18, 52, 86) -> #123456 (hex equivalent). 
+
+Edge cases and how to handle:
+
+  * Invalid hex: 
+    * " #AbCdE" -> "#AbCdE" 
+    * "#1234567 " -> "#1234567" 
+    * "#XXYYZZ " -> "#XXYYZZ" 
+    * "1 #abc 2" -> "1 #abc 2" 
+
+  * Valid hex: 
+    * " #aACc22" -> "#ac2" 
+    * "#0C2" -> "#0c2" 
+
+  * Invalid rgb(): 
+    * " rgb(1,2,3,4)" -> "rgb(1,2,3,4)" 
+    * "RGB(,1,2) " -> "RGB(,1,2)" 
+    * " rgb(355, 0, 2) " -> "rgb(355, 0, 2)" 
+    * "@@ rgb(0,0,0) @@" -> "@@ rgb(0,0,0) @@" 
+
+  * Valid rgb(): 
+result = [“RGB”, “1”,”2”,”3”]
+    * " RGB( 1 , 2 , 3 )" -> "#010203" 
+    * "rgb(255,0,17) " -> "#f01" 
+
+
